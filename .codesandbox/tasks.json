@@ -19,18 +19,27 @@
     },
     "build": {
       "name": "build",
-      "command": "pnpm run build",
-      "runAtStart": false
+      "command": "pnpm run build"
     },
     "start": {
       "name": "start",
-      "command": "pnpm run start",
-      "runAtStart": false
+      "command": "pnpm run start"
     },
     "lint": {
       "name": "lint",
-      "command": "pnpm run lint",
-      "runAtStart": false
+      "command": "pnpm run lint"
+    },
+    "npm install -D tailwindcss postcss autoprefixer": {
+      "name": "tailwind",
+      "command": "npm install -D tailwindcss postcss autoprefixer"
+    },
+    "npm install -D tailwindcss": {
+      "name": "tailwindInstalling",
+      "command": "npm install -D tailwindcss"
+    },
+    "npx  tailwindcss init -p": {
+      "name": "tailInit",
+      "command": "npx  tailwindcss init -p"
     }
   }
 }
