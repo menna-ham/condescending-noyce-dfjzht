@@ -2,6 +2,9 @@
 import Link from 'next/link';
 import './styles.css';
 import { usePathname } from 'next/navigation'
+import {useState} from 'react'
+// Template is similar to layout,
+// used in case we need to recreate the whole component, unreserve the state, Dom element are recreated
 
 const navLinks=[
 {name:'Login', href:'/login'},
@@ -11,9 +14,12 @@ const navLinks=[
 
 export default function layout({children}:{children:React.ReactNode}){
     const pathname = usePathname();
+    let [input, setInput] = useState("");
     return(
         <>
-        <div>
+        <div className='d-flex flex-col p-4 m-5'>
+        <input className='border-2 border-gray-700'  value={input} onChange={e=>setInput(e.target.value)}/>
+
             <div className='flex flex-row content-evenly m-3 bg-blue-200'>
                 {
                     navLinks.map((link)=>{
