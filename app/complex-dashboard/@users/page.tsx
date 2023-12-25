@@ -1,4 +1,4 @@
-import Card from '../../components/card.tsx';
+import Card from '../../components/Card';
 
 export default function UsersPage() {
     return (
