@@ -3,16 +3,19 @@ export default function ComplexLayout({
   users,
   notification,
   revenue,
+  login,
 }: {
   children: React.ReactNode;
   users: React.ReactNode;
   notification: React.ReactNode;
   revenue: React.ReactNode;
+  login: React.ReactNode;
 }) {
-  return (
+  const isLogged = false;
+  return isLogged ? (
     <div className=" p-4 ">
       {children}
-      <div className="flex flex-row  content-between bg-green-300 w-full">
+      <div className="flex flex-row  content-between bg-green-300 w-full h-full">
         <div className="flex flex-col bg-blue-200 ">
           <div>{users}</div>
           <div>{revenue} </div>
@@ -20,5 +23,7 @@ export default function ComplexLayout({
         <div className="flex flex-1 w-full">{notification}</div>
       </div>
     </div>
+  ) : (
+    login
   );
 }
