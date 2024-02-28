@@ -28,10 +28,10 @@ const page = ({params}: Props) => {
                     <span className='font-bold'> Name: </span>
                     <span >{filteredWonder.name} </span>
                 </div>
-                <div>
+                {/* <div>
                     <span className='font-bold'> Location: </span>
                     <span >{filteredWonder.location} </span>
-                </div>
+                </div> */}
                 <div>
                     <span className='font-bold'> Photographer: </span>
                     <span >{filteredWonder.photographer} </span>
