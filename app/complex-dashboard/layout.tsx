@@ -11,7 +11,7 @@ export default function ComplexLayout({
   revenue: React.ReactNode;
   login: React.ReactNode;
 }) {
-  const isLogged = false;
+  const isLogged = true;
   return isLogged ? (
     <div className=" p-4 ">
       {children}
