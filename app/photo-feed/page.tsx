@@ -2,6 +2,7 @@ import React from 'react'
 import wondersImages from './wonders'
 import Image from 'next/image';
 import photo1 from './photos/1.jpg'
+import Link from 'next/link';
 
 type Props = {}
 
@@ -14,9 +15,9 @@ function page() {
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6'>
                 {
                     wonders.map((w) => (
-                        <div className='w-fit bg-green-800'>
-                            <Image src={w.src} alt='p1' />
-                        </div>
+                        <Link href={`/photo-feed/${w.id}`} className='w-fit bg-green-800'>
+                            <Image src={w.src} alt='p1' className='w-full object-cover aspect-square'/>
+                        </Link>
                     ))
                 }
             </div>

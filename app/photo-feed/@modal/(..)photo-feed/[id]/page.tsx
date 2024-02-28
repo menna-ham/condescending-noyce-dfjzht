@@ -3,8 +3,9 @@ import React from 'react'
 import { Fragment } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import wondersImages, { WonderImage } from '../wonders';
+// import { useRouter } from 'next/navigation';
+import Modal from '@/app/components/Modal';
+import wondersImages, { WonderImage } from '@/app/photo-feed/wonders';
 
 type Props = {
     params:{
@@ -13,14 +14,11 @@ type Props = {
 }
 const page = ({params}: Props) => {
     let filteredWonder:WonderImage = wondersImages.find((w:WonderImage)=>w.id===params.id)!;
-    let router = useRouter()
 
-    let Back =()=>{
-        router.replace('/photo-feed')
-    }
   return (
-    <Fragment>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 w-[70%] m-auto my-4 gap-3'>
+    <Modal>
+        <div className=' w-[70%] m-auto my-4 gap-3'>
+            <p className='text-2xl my-2'>Intercepted Wonder</p>
             <div>
                 <Image src={filteredWonder.src} alt={filteredWonder.name}/>
             </div>
@@ -38,15 +36,13 @@ const page = ({params}: Props) => {
                     <span className='font-bold'> Photographer: </span>
                     <span >{filteredWonder.photographer} </span>
                 </div>
-                <div className='my-3'>
-                    <button onClick={Back} className='bg-blue-300 p-3 text-white rounded'>Back to All wonders</button>
-                </div>
+
             </div>
 
             
         </div>
 
-    </Fragment>
+    </Modal>
   )
 }
 
